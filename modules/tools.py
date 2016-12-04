@@ -29,7 +29,7 @@ def usodisk():
         print "Desea guardar estos logs ?"
         pregunta=raw_input("s/n : ")
         if pregunta == "s":
-            os.system("df -ah | grep /dev/sd >> logs/DATOS-Usodisco-logs_.txt")
+            os.system("df -ah | grep /dev/sd >> logs/DATOS-Usodisco-logs_`date`_.txt")
             pass
         elif pregunta == "n":
             print "Gracias por usar mi scripts :D!"

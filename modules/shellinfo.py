@@ -24,7 +24,7 @@ def sshbrute():
         print "Desea guardar estos logs ?"
         pregunta=raw_input("s/n : ")
         if pregunta == "s":
-            os.system("grep sshd.\*Did /var/log/auth.log >> logs/SSH-brute-logs.txt")
+            os.system("grep sshd.\*Did /var/log/auth.log >> logs/SSH-brute-logs_`date`_.txt")
             pass
         elif pregunta == "n":
             print "Gracias por usar mi scripts :D!"
@@ -44,7 +44,7 @@ def sshconf():
         print "Desea guardar estos logs ?"
         pregunta=raw_input("s/n : ")
         if pregunta == "s":
-            os.system("grep sshd.\*Failed /var/log/auth.log >> logs/SSH-ConnectionFailed-logs.txt")
+            os.system("grep sshd.\*Failed /var/log/auth.log >> logs/SSH-ConnectionFailed-logs_`date`_.txt")
             pass
         elif pregunta == "n":
             print "Gracias por usar mi scripts :D!"
@@ -64,7 +64,7 @@ def fblogwar():
         print "Desea guardar estos logs ?"
         pregunta=raw_input("s/n : ")
         if pregunta == "s":
-            os.system("grep WARNING /var/log/fail2ban.log >> logs/Fail2ban-warnings-logs.txt")
+            os.system("grep WARNING /var/log/fail2ban.log >> logs/Fail2ban-warnings-logs_`date`_.txt")
             pass
         elif pregunta == "n":
             print "Gracias por usar mi scripts :D!"
@@ -84,7 +84,7 @@ def fbloginfo():
         print "Desea guardar estos logs ?"
         pregunta=raw_input("s/n : ")
         if pregunta == "s":
-            os.system("grep INFO /var/log/fail2ban.log >> logs/Fail2ban-info-logs.txt")
+            os.system("grep INFO /var/log/fail2ban.log >> logs/Fail2ban-info-logs_`date`_.txt")
             pass
         elif pregunta == "n":
             print "Gracias por usar mi scripts :D!"
@@ -104,7 +104,7 @@ def fblogall():
         print "Desea guardar estos logs ?"
         pregunta=raw_input("s/n : ")
         if pregunta == "s":
-            os.system("grep fail2ban.* /var/log/fail2ban.log >> logs/Fail2ban-ALL-logs.txt")
+            os.system("grep fail2ban.* /var/log/fail2ban.log >> logs/Fail2ban-ALL-logs_`date`_.txt")
             pass
         elif pregunta == "n":
             print "Gracias por usar mi scripts :D!"
@@ -124,7 +124,7 @@ def aperrorlog():
         print "Desea guardar estos logs ?"
         pregunta=raw_input("s/n : ")
         if pregunta == "s":
-            os.system("cat /var/log/apache2/error.log >> logs/Apache2-error-logs.txt")
+            os.system("cat /var/log/apache2/error.log >> logs/Apache2-error-logs_`date`_.txt")
             pass
         elif pregunta == "n":
             print "Gracias por usar mi scripts :D!"
@@ -144,7 +144,7 @@ def apaccesslog():
         print "Desea guardar estos logs ?"
         pregunta=raw_input("s/n : ")
         if pregunta == "s":
-            os.system("cat /var/log/apache2/access.log >> logs/Apache2-Acces-logs.txt")
+            os.system("cat /var/log/apache2/access.log >> logs/Apache2-Acces-logs_`date`_.txt")
             pass
         elif pregunta == "n":
             print "Gracias por usar mi scripts :D!"
@@ -167,8 +167,8 @@ def fbloban():
         print "Desea guardar estos logs ?"
         pregunta=raw_input("s/n : ")
         if pregunta == "s":
-            os.system("grep '\[ssh\] Ban' /var/log/fail2ban.log >> logs/Fail2ban-Ban-logs.txt")
-            os.system("grep '\[ssh\] Unban' /var/log/fail2ban.log >> logs/Fail2ban-Unban-logs.txt")
+            os.system("grep '\[ssh\] Ban' /var/log/fail2ban.log >> logs/Fail2ban-Ban-logs_`date`_.txt")
+            os.system("grep '\[ssh\] Unban' /var/log/fail2ban.log >> logs/Fail2ban-Unban-logs_`date`_.txt")
             pass
         elif pregunta == "n":
             print "Gracias por usar mi scripts :D!"
