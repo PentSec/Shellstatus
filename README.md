@@ -1,2 +1,2 @@
 # Shellstatus
-Shellstatus basado en el script bash de RVZM
+ShellStatus esta basado en la version Bash de RVZM!
