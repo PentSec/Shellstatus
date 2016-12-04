@@ -28,7 +28,7 @@ def sshbrute():
             pass
         elif pregunta == "n":
             print "Gracias por usar mi scripts :D!"
-            sys.exit(0)
+            pass
         else:
             print "Opcion incorrecta eliga una."
             sshbrute()
@@ -48,7 +48,7 @@ def sshconf():
             pass
         elif pregunta == "n":
             print "Gracias por usar mi scripts :D!"
-            sys.exit(0)
+            pass
         else:
             print "Opcion incorrecta eliga una."
             sshbrute()
@@ -68,7 +68,7 @@ def fblogwar():
             pass
         elif pregunta == "n":
             print "Gracias por usar mi scripts :D!"
-            sys.exit(0)
+            pass
         else:
             print "Opcion incorrecta eliga una."
             sshbrute()
@@ -88,7 +88,7 @@ def fbloginfo():
             pass
         elif pregunta == "n":
             print "Gracias por usar mi scripts :D!"
-            sys.exit(0)
+            pass
         else:
             print "Opcion incorrecta eliga una."
             sshbrute()
@@ -108,7 +108,7 @@ def fblogall():
             pass
         elif pregunta == "n":
             print "Gracias por usar mi scripts :D!"
-            sys.exit(0)
+            pass
         else:
             print "Opcion incorrecta eliga una."
             sshbrute()
@@ -128,7 +128,7 @@ def aperrorlog():
             pass
         elif pregunta == "n":
             print "Gracias por usar mi scripts :D!"
-            sys.exit(0)
+            pass
         else:
             print "Opcion incorrecta eliga una."
             sshbrute()
@@ -148,7 +148,31 @@ def apaccesslog():
             pass
         elif pregunta == "n":
             print "Gracias por usar mi scripts :D!"
-            sys.exit(0)
+            pass
+        else:
+            print "Opcion incorrecta eliga una."
+            sshbrute()
+    except KeyboardInterrupt:
+        print "Saliendo."
+        sys.exit(0)
+
+def fbloban():
+    try:
+        print "Sacando logs.."
+        print ""
+        print "Monstrando lista de baneos."
+        os.system("grep '\[ssh\] Ban' /var/log/fail2ban.log")
+        print "Mostrando lista de desbaneos"
+        os.system("grep '\[ssh\] Unban' /var/log/fail2ban.log")
+        print "Desea guardar estos logs ?"
+        pregunta=raw_input("s/n : ")
+        if pregunta == "s":
+            os.system("grep '\[ssh\] Ban' /var/log/fail2ban.log >> logs/Fail2ban-Ban-logs.txt")
+            os.system("grep '\[ssh\] Unban' /var/log/fail2ban.log >> logs/Fail2ban-Unban-logs.txt")
+            pass
+        elif pregunta == "n":
+            print "Gracias por usar mi scripts :D!"
+            pass
         else:
             print "Opcion incorrecta eliga una."
             sshbrute()

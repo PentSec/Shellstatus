@@ -16,72 +16,63 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import os
-import sys
 from modules import check
 from modules import shellinfo
-version='v1.0n stable'
+from modules import tools
+from modules import submenu
+version='v1.1n stable'
 
 try:
     print ""
-    check.checkall()
+    #check.checkall()
     print ""
     def pmenu():
         print ""
-        print """Selecciona una de las siguientes opciones."""
+        print """==============ShellStatus============="""
         print """
-	1) SSH brute force.
-        2) SSH: conexiones fallidas.
-        3) Fail2ban log warning.
-	4) Fail2ban log info.
-        5) Fail2an log ALL.
-        6) Apache2: Error log.
-        7) Apache2: Access log.
-        8) Salir.
+	1) SSH opciones.
+        2) Fail2ban opciones.
+        3) Apache2: opciones.
+        """
+        print ""
+        print """==============TOOL BOX================"""
+        print """
+	9) Uso de Disco.
+        0) Uptime.
+        x) salir..
         """
         men=raw_input("Selecciona: ")
         if men == "1":
             try:
-                shellinfo.sshbrute()    
+                submenu.submenussh()    
                 pmenu()
             except KeyboardInterrupt:
                 pmenu()
         elif men == "2":
             try:
-                shellinfo.sshconf()
+                submenu.submenufb()
                 pmenu()
             except KeyboardInterrupt:
                 pmenu()
         elif men == "3":
             try:
-                shellinfo.fblogwar()
+                submenu.submenuap()
                 pmenu()
             except KeyboardInterrupt:
                 pmenu()
-        elif men == "4":
+        elif men == "9":
             try:
-                shellinfo.fbloginfo()
+                tools.usodisk()
                 pmenu()
             except KeyboardInterrupt:
                 pmenu()
-        elif men == "5":
+        elif men == "0":
             try:
-                shellinfo.fblogall()
+                tools.uptime()
                 pmenu()
             except KeyboardInterrupt:
                 pmenu()
-        elif men == "6":
-            try:
-                shellinfo.aperrorlog()
-                pmenu()
-            except KeyboardInterrupt:
-                pmenu()
-        elif men == "7":
-            try:
-                shellinfo.apaccesslog()
-                pmenu()
-            except KeyboardInterrupt:
-                pmenu()
-        elif men == "8":
+        elif men == "x":
             print "Saliendo."
                 
         else:
