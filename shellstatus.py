@@ -24,7 +24,7 @@ version='v1.1n stable'
 
 try:
     print ""
-    #check.checkall()
+    check.checkall()
     print ""
     def pmenu():
         print ""

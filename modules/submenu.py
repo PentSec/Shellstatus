@@ -21,7 +21,7 @@ import shellinfo
 import tools
 
 print ""
-#check.checkall()
+check.checkall()
 print ""
 def submenussh():
     try:
