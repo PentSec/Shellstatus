@@ -21,7 +21,7 @@ f2b=os.path.isfile("/usr/bin/fail2ban-client") or os.path.isfile("/usr/bin/fail2
 ap2=os.path.isfile("/usr/bin/apache2")
 
 def requerimientos():
-    print "No tiene los requerimientos necesarios para la visualisasion del log. no podra usar este Script."
+    print "No tiene los requerimientos necesarios para la visualizacion del log. no podra usar este Script."
     os._exit(0)
 
 def checkall():
