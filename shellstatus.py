@@ -20,7 +20,25 @@ from modules import check
 from modules import shellinfo
 from modules import tools
 from modules import submenu
-version='v1.1n stable'
+import argparse
+version='v1.1 stable'
+
+shellstt = argparse.ArgumentParser(prog='shellstatus.py',usage='python2 shellstatus.py',description='Con este programa podras revisar y guardar logs.. irc.fukin.tech #PentSec #dev mailto:pentsec@cock.li')
+shellstt.add_argument("-u", "--update", help="Actualiza Shellstatus a la mas version mas reciente.", action="store_true")
+shellstt.add_argument("-v", "--version", help="Version de Shellstatus", action="store_true")
+muestra = shellstt.parse_args()
+
+if muestra.update:   
+       print "Actualizando Shellstatus..."
+       print ""
+       print "Mostrando Cambios.."
+       os.system("git pull")
+       print "Shellstatus Se actualizo correctamente."
+       os._exit(0)
+
+if muestra.version:
+    print "Versión: ",version
+    os._exit(0)
 
 try:
     print ""
